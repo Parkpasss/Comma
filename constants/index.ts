@@ -1,17 +1,12 @@
-import { IoPartlySunnyOutline } from "react-icons/io5"
-import { MdOutlineBedroomChild, MdOutlineSurfing } from "react-icons/md"
 import {
-  GiHolyOak,
-  GiCaveEntrance,
-  GiCampingTent,
-  GiBarn,
-  GiSkier,
-  GiStarKey,
-} from "react-icons/gi"
-import { FaHouseUser, FaUmbrellaBeach } from "react-icons/fa6"
-import { BiSolidTree, BiWater } from "react-icons/bi"
-import { AiOutlineStar } from "react-icons/ai"
-import { TbSwimming, TbMoodKid } from "react-icons/tb"
+  MdAddHomeWork,
+  MdApartment,
+  MdOutlineBedroomChild,
+  MdOutlineSurfing,
+} from "react-icons/md"
+import { GiHouse } from "react-icons/gi"
+import { FaHotel, FaHouseUser } from "react-icons/fa6"
+import { RiHotelFill } from "react-icons/ri"
 
 export const CATEGORY = [
   "호텔",
@@ -23,12 +18,12 @@ export const CATEGORY = [
 ]
 
 export const CATEGORY_DATA = [
-  { title: "호텔", Icon: IoPartlySunnyOutline },
-  { title: "모텔", Icon: MdOutlineBedroomChild },
-  { title: "게스트하우스", Icon: FaUmbrellaBeach },
-  { title: "아파트", Icon: AiOutlineStar },
-  { title: "주택", Icon: TbSwimming },
-  { title: "기타", Icon: TbMoodKid },
+  { title: "호텔", Icon: FaHotel },
+  { title: "모텔", Icon: RiHotelFill },
+  { title: "게스트하우스", Icon: FaHouseUser },
+  { title: "아파트", Icon: MdApartment },
+  { title: "주택", Icon: GiHouse },
+  { title: "기타", Icon: MdAddHomeWork },
 ]
 
 /**  @example - https://png-pixel.com/ */
