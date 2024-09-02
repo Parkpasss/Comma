@@ -15,6 +15,16 @@ export async function GET(req: Request) {
     const category = searchParams.get("category")
     const q = searchParams.get("q")
 
+    console.log("GET /api/rooms 요청 파라미터:", {
+      page,
+      limit,
+      id,
+      my,
+      location,
+      category,
+      q,
+    })
+
     const session = await getServerSession(authOptions)
 
     if (id) {
@@ -60,7 +70,7 @@ export async function GET(req: Request) {
         orderBy: { createdAt: "desc" },
         where: {
           userId: session.user.id,
-          title: q ? { contains: q } : {},
+          ...(q ? { title: { contains: q } } : {}),
         },
         take: limit,
         skip: (page - 1) * limit,
@@ -80,8 +90,8 @@ export async function GET(req: Request) {
       const count = await prisma.room.count()
       const rooms = await prisma.room.findMany({
         where: {
-          address: location ? { contains: location } : {},
-          category: category || undefined,
+          ...(location ? { address: { contains: location } } : {}),
+          ...(category ? { category: category } : {}),
         },
         orderBy: { createdAt: "desc" },
         take: limit,
